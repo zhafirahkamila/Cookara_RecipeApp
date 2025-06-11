@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="softPink">#FFE9EB</color>
+    <color name="medPink">#FFC6C9</color>
+    <color name="pink">#FD5D69</color>
+    <color name="main">#FB7564</color>
+    <color name="brown">#3E2823</color>
+    <color name="yellow">#FFAD30</color>
+    <color name="softYellow">#FFE1B3</color>
+    <color name="transparantGrey">#80D1D1D1</color>
+    <color name="greyies">#444444</color>
+    <color name="grey">#878787</color>
+    <color name="required">#99FF0000</color>
+</resources>

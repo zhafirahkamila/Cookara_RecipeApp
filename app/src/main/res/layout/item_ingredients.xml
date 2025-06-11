@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/ivIngredients"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/kamari"
+            android:background="@drawable/radius_bg"
+            android:clipToOutline="true" />
+
+        <TextView
+            android:id="@+id/nameIngredient"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="Granulated sugar"
+            android:textSize="16sp"
+            android:gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/tvGram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="160 g"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

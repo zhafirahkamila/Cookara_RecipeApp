@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "153440058080",
+    "project_id": "recipe-application-fbd31",
+    "storage_bucket": "recipe-application-fbd31.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153440058080:android:52e4b0e1dd5092cbc76e85",
+        "android_client_info": {
+          "package_name": "id.ac.binus.recipeapp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153440058080-j06bp1kmdr37379dqn97ho6voveumj77.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.binus.recipeapp2",
+            "certificate_hash": "d5f717296175f30172365db82d9da6af38e3ec9f"
+          }
+        },
+        {
+          "client_id": "153440058080-oi5o8r5notgtfpn8l4kvgu9djvetf647.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjplLCPPH_332Z6yCrrFmct8_dQuBB-9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153440058080-oi5o8r5notgtfpn8l4kvgu9djvetf647.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
