@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         val tvUser: TextView = findViewById(R.id.tvUser)
         val edtSearch: EditText = findViewById(R.id.edtSearch)
         val ivFavorite: ImageView = findViewById(R.id.ivFavorite)
+        val tvRecipes: TextView = findViewById(R.id.tvRecipes)
 
         ivFavorite.setOnClickListener {
             val intent = Intent(this, FavoritePage::class.java)
@@ -52,7 +53,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         val categoryList = mutableListOf<Category>()
-        adapter = CategoryAdapter(categoryList)
+        adapter = CategoryAdapter(categoryList) { categoryName ->
+            if (categoryName == "All") {
+                fetchRecipes("", recipeList, adapter2)
+                tvRecipes.text = "All Recipes"
+            } else {
+                fetchRecipesByCategory(categoryName, recipeList, adapter2)
+                tvRecipes.text = "$categoryName Recipes"
+            }
+        }
+
         recyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.adapter = adapter
@@ -209,6 +219,12 @@ class MainActivity : AppCompatActivity() {
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
+                categoryList.clear()
+
+                // ➕ Tambahkan kategori "All" manual
+                val allCategory = Category(name = "All", imageResId = "allrecipes") // image kosong, bisa diisi icon lokal
+                categoryList.add(allCategory)
+
                 val categories = response.getJSONArray("categories")
                 for (i in 0 until categories.length()) {
                     val category = categories.getJSONObject(i)
@@ -258,4 +274,60 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun fetchRecipesByCategory(category: String, recipeList: MutableList<Recipe>, adapter: RecipeAdapter) {
+        val url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=$category"
+        val requestQueue = Volley.newRequestQueue(this)
+
+        val user = FirebaseAuth.getInstance().currentUser
+        val db = FirebaseFirestore.getInstance()
+
+        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
+            { response ->
+                recipeList.clear()
+                val meals = response.optJSONArray("meals")
+                if (meals != null) {
+                    val fetchedRecipes = mutableListOf<Recipe>()
+
+                    for (i in 0 until meals.length()) {
+                        val meal = meals.getJSONObject(i)
+                        val name = meal.getString("strMeal")
+                        val imageResId = meal.getString("strMealThumb")
+//                        val idMeal = meal.getString("idMeal")
+
+                        val recipe = getOrCreateRecipe(
+                            this,
+                            name,
+                            category,
+                            imageResId,
+                            instructions = "",
+                            videos = "",
+                            ingredients = listOf()
+                        )
+                        fetchedRecipes.add(recipe)
+                    }
+
+                    if (user != null) {
+                        db.collection("favorite").document(user.uid).collection("recipes")
+                            .get().addOnSuccessListener { favorites ->
+                                val favoriteNames = favorites.map { it.id }
+                                for (recipe in fetchedRecipes) {
+                                    if (recipe.name in favoriteNames) {
+                                        recipe.isFavorite = true
+                                    }
+                                }
+                                recipeList.addAll(fetchedRecipes)
+                                adapter.notifyDataSetChanged()
+                            }
+                    } else {
+                        recipeList.addAll(fetchedRecipes)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            },
+            { error -> error.printStackTrace() }
+        )
+        requestQueue.add(jsonObjectRequest)
+    }
+
 }

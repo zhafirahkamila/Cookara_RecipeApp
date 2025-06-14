@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/softPink"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+
+        <!-- Tombol Back -->
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/arrow_back" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <!-- Profile Avatar -->
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/circle_bg"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/kamari" />
+
+    <TextView
+        android:id="@+id/tvChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change"
+        android:textSize="18sp"
+        android:textColor="@color/pink"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Username Field -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Username"
+        android:textColor="@color/grey"
+        android:textSize="14sp"
+        android:layout_marginTop="40dp"/>
+
+        <EditText
+            android:id="@+id/edtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_bg"
+            android:ems="10"
+            android:text="Enter Username"
+            android:inputType="text"
+            android:paddingLeft="16dp"
+            android:textColorHint="@color/grey"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+    <!-- Email Field -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Email"
+        android:textColor="@color/grey"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_bg"
+        android:ems="10"
+        android:text="Enter Email"
+        android:inputType="text"
+        android:paddingLeft="16dp"
+        android:textColorHint="@color/grey"
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
+
+    <!-- Old Password -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Password"
+        android:textColor="@color/grey"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/edtOldPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="Enter Current Password"
+        android:inputType="textPassword"
+        android:paddingLeft="16dp"
+        android:textColorHint="@color/grey"
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
+
+    <!-- New Password -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Password"
+        android:textColor="@color/grey"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/edtNewPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="Enter New Password"
+        android:inputType="textPassword"
+        android:paddingLeft="16dp"
+        android:textColorHint="@color/grey"
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        style="@android:style/Widget.Button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/button_bg_login"
+        android:text="Save Changes"
+        android:textColor="@drawable/btn_text_pressed"
+        android:textSize="18sp"
+        android:textStyle="bold">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+<!--    </LinearLayout>-->
+</LinearLayout>

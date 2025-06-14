@@ -28,7 +28,9 @@ class CategoryPage : AppCompatActivity() {
         }
 
         val categoryList = mutableListOf<Category>()
-        val adapter = CategoriesAdapter(categoryList)
+        val adapter = CategoriesAdapter(categoryList) { categoryName ->
+
+        }
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = adapter
 
@@ -37,6 +39,12 @@ class CategoryPage : AppCompatActivity() {
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
+                categoryList.clear()
+
+                // ➕ Tambahkan kategori "All" manual
+                val allCategory = Category(name = "All", imageResId = "allrecipes") // image kosong, bisa diisi icon lokal
+                categoryList.add(allCategory)
+
                 val categories = response.getJSONArray("categories")
                 for (i in 0 until categories.length()) {
                     val category = categories.getJSONObject(i)

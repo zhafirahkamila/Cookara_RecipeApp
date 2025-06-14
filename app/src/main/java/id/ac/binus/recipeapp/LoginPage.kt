@@ -69,12 +69,50 @@ class LoginPage : AppCompatActivity() {
         val edtUsername = findViewById<EditText>(R.id.edtUsername)
         val edtPassword = findViewById<EditText>(R.id.edtPassword)
         val googleIcon = findViewById<ImageView>(R.id.google_icon)
+        val tvForget = findViewById<TextView>(R.id.tvForget)
         val db = FirebaseFirestore.getInstance()
 
         // Set colored asterisks or links
         setColoredText(tvUsername, "Username*", "*")
         setColoredText(tvPassword, "Password*", "*")
         setColoredText(txtHaveAcc, "Didn’t have an account? Register Here!", "Register Here!")
+
+        tvForget.setOnClickListener {
+            val username = edtUsername.text.toString()
+
+            if (username.isEmpty()) {
+                Toast.makeText(this, "Please enter your username first", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            // Ambil email berdasarkan username dari Firestore
+            db.collection("users")
+                .whereEqualTo("username", username)
+                .get()
+                .addOnSuccessListener { documents ->
+                    if (!documents.isEmpty) {
+                        val document = documents.documents[0]
+                        val email = document.getString("email")
+
+                        if (email != null) {
+                            auth.sendPasswordResetEmail(email)
+                                .addOnCompleteListener { task ->
+                                    if (task.isSuccessful) {
+                                        Toast.makeText(this, "Password reset email sent to $email", Toast.LENGTH_LONG).show()
+                                    } else {
+                                        Toast.makeText(this, "Failed to send reset email: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                        } else {
+                            Toast.makeText(this, "Email not found for this username", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Toast.makeText(this, "Username not found", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
 
         // Handle Email/Password Login
         btnLogin.setOnClickListener {
