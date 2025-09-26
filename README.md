@@ -36,6 +36,7 @@ The app provides users with a seamless experience for discovering, saving, and o
 <img width="200" height="500" alt="signUp" src="https://github.com/user-attachments/assets/0a542361-caf9-46c9-8121-b1fd0df22d87" />
 <img width="200" height="500" alt="login" src="https://github.com/user-attachments/assets/8ba85116-80d0-4600-895e-867add392b1b" />
 <img width="200" height="500" alt="homeRecipes" src="https://github.com/user-attachments/assets/d157f73f-3e08-4482-95a9-7c4b006fcf47" />
-<img width="200" height="500" alt="favRecipe" src="https://github.com/user-attachments/assets/ab26caff-9377-44ce-ac10-9fc01243d2ea" />
 <img width="200" height="500" alt="category" src="https://github.com/user-attachments/assets/c469eb5f-5ffd-4720-a1c2-de66648e1e74" />
-
+<img width="200" height="500" alt="favRecipe" src="https://github.com/user-attachments/assets/ab26caff-9377-44ce-ac10-9fc01243d2ea" />
+<img width="200" height="500" alt="profileRecipe" src="https://github.com/user-attachments/assets/cd99d374-f1b8-4dd6-a314-1802c9703ea2" />
+<img width="200" height="500" alt="editProfile" src="https://github.com/user-attachments/assets/3735a6ab-d258-414c-bbb8-09a6f483556a" />
