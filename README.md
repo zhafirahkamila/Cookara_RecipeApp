@@ -31,11 +31,11 @@ The app provides users with a seamless experience for discovering, saving, and o
    git clone https://github.com/zhafirahkamila/Cookara_RecipeApp.git
 
 ## Screenshots
-<img width="1344" height="2992" alt="splash" src="https://github.com/user-attachments/assets/f28688c8-923c-42b4-bfa5-d63f307e9114" />
-<img width="1344" height="2992" alt="welcomeRecipe" src="https://github.com/user-attachments/assets/6bd13f99-79c2-4897-9261-31fac0f406cd" />
-<img width="1344" height="2992" alt="signUp" src="https://github.com/user-attachments/assets/0a542361-caf9-46c9-8121-b1fd0df22d87" />
-<img width="1344" height="2992" alt="login" src="https://github.com/user-attachments/assets/8ba85116-80d0-4600-895e-867add392b1b" />
-<img width="1344" height="2992" alt="homeRecipes" src="https://github.com/user-attachments/assets/d157f73f-3e08-4482-95a9-7c4b006fcf47" />
-<img width="1344" height="2992" alt="favRecipe" src="https://github.com/user-attachments/assets/ab26caff-9377-44ce-ac10-9fc01243d2ea" />
-<img width="1344" height="2992" alt="category" src="https://github.com/user-attachments/assets/c469eb5f-5ffd-4720-a1c2-de66648e1e74" />
+<img width="200" height="500" alt="splash" src="https://github.com/user-attachments/assets/f28688c8-923c-42b4-bfa5-d63f307e9114" />
+<img width="200" height="500" alt="welcomeRecipe" src="https://github.com/user-attachments/assets/6bd13f99-79c2-4897-9261-31fac0f406cd" />
+<img width="200" height="500" alt="signUp" src="https://github.com/user-attachments/assets/0a542361-caf9-46c9-8121-b1fd0df22d87" />
+<img width="200" height="500" alt="login" src="https://github.com/user-attachments/assets/8ba85116-80d0-4600-895e-867add392b1b" />
+<img width="200" height="500" alt="homeRecipes" src="https://github.com/user-attachments/assets/d157f73f-3e08-4482-95a9-7c4b006fcf47" />
+<img width="200" height="500" alt="favRecipe" src="https://github.com/user-attachments/assets/ab26caff-9377-44ce-ac10-9fc01243d2ea" />
+<img width="200" height="500" alt="category" src="https://github.com/user-attachments/assets/c469eb5f-5ffd-4720-a1c2-de66648e1e74" />
 
