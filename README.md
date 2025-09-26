@@ -26,6 +26,9 @@ The app provides users with a seamless experience for discovering, saving, and o
 - **Year:** 2025
 
 ## 🚀 How to Run
-Clone the repository:
+- Clone the repository:
    ```bash
    git clone https://github.com/zhafirahkamila/Cookara_RecipeApp.git
+
+## Screenshots
+
